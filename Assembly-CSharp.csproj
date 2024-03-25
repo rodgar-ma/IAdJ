@@ -78,6 +78,7 @@
     <Compile Include="Assets\ScriptsAI\Steering\Generic\SteeringBehaviour.cs" />
     <Compile Include="Assets\Script\MarkCharacter.cs" />
     <Compile Include="Assets\ScriptsAI\Steering\Group\Separation.cs" />
+    <Compile Include="Assets\Store_Unity\Characters\Mini Simple Characters Skeleton Demo\Readme\Scripts\Readme.cs" />
     <Compile Include="Assets\ScriptsAI\Steering\Delegated\CollisionDetector.cs" />
     <Compile Include="Assets\ScriptsAI\NPC\AgentPlayer.cs" />
     <Compile Include="Assets\ScriptsAI\Steering\Delegated\WallAvoidance_3Bigotes.cs" />
@@ -89,7 +90,6 @@
     <Compile Include="Assets\Script\CameraScripts\MarkObjects.cs" />
     <Compile Include="Assets\Script\PropuestaOrdenarIrAUnLugar.cs" />
     <Compile Include="Assets\ScriptsAI\NPC\Bodi.cs" />
-    <Compile Include="Assets\Store_Unity\Characters\Mini Simple Characters Skeleton Demo\Readme\Scripts\Readme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

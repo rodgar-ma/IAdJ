@@ -56,8 +56,26 @@ public class AgentNPC : Agent
         // MOVIMIENTO UNIFORME ACELERADO
         // Aceleracion
         Acceleration = this.steer.linear;
+
+        // Si la aceleración es demasiado pequeña paramos al NPC
+        /*
+        if(Acceleration.magnitude <= 0.1f)
+        {
+            Velocity = Vector3.zero;
+            Acceleration = Vector3.zero;
+        }
+        */
+
         // Aceleracion Angular
         AngularAcc = this.steer.angular;
+        /*
+        // Si la aceleracion angular es demasiado pequeña paramos de rotar al NPC
+        if (AngularAcc <= 0.1f)
+        {
+            Rotation = 0f;
+        }
+        */
+
         // Velocity
         Velocity = Velocity + Acceleration * deltaTime;   // Steer se interpreta como velocidades.
         // Rotation
