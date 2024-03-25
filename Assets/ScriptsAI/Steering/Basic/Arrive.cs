@@ -6,7 +6,7 @@ public class Arrive : SteeringBehaviour
 {
 
     // Declara las variables que necesites para este SteeringBehaviour
-    public float timeToTarget = 0.25f;
+    public float timeToTarget = 0.001f;
     protected Vector3 targetPosition;
 
 
@@ -20,18 +20,24 @@ public class Arrive : SteeringBehaviour
     {
         Steering steer = new Steering();
         float steerSpeed;
+        Vector3 desiredVelocity;
+
+        if (useDefaultTarget)
+        {
+            targetPosition = target.Position;
+        }
 
         // Calcula el steering.
-        Vector3 arriveVelocity = target.Position - agent.Position;
+        Vector3 direction = targetPosition - agent.Position;
 
         // Calculamos distancia con el objetivo
-        float distance = arriveVelocity.magnitude;
+        float distance = direction.magnitude;
         
 
         // Comprobamos si estamos dentro del radio
-        if(distance < target.InteriorRadius)
+        if(distance < agent.InteriorRadius)
         {
-            return null;
+            steer.linear = Vector3.zero;
         }
         else
         {
@@ -39,24 +45,23 @@ public class Arrive : SteeringBehaviour
             // steer.linear = arriveVelocity / timeToTarget;
 
             // Si estamos fuera del radio slow
-            if (distance > target.ArrivalRadius)
-            {
+            if (distance > agent.ArrivalRadius)
+            { 
                 steerSpeed = agent.MaxSpeed;
             }
             // Si no calculamos la velocidad escalada
             else
             {
-                steerSpeed = agent.MaxSpeed * distance / target.ArrivalRadius;
+                steerSpeed = agent.MaxSpeed * distance / agent.ArrivalRadius;
             }
 
             // 
 
             // Combinamos direccion y velocidad
-            arriveVelocity = arriveVelocity.normalized * steerSpeed;
+            desiredVelocity = direction.normalized * steerSpeed;
 
             // Acceleration tries to get to the target velocity
-            steer.linear = arriveVelocity - target.Velocity;
-            steer.linear /= timeToTarget;
+            steer.linear = (desiredVelocity - target.Velocity) / timeToTarget;
 
 
             // Comprobamos que no sobrepasemos la velocidad maxima
