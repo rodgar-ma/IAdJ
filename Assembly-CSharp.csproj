@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CE42CCA2-A5F6-FD9A-C68C-CCE92E9B4260}</ProjectGuid>
+    <ProjectGuid>{65BFDEE2-596D-F660-76AE-C70C308A2503}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -89,6 +89,7 @@
     <Compile Include="Assets\Script\CameraScripts\MarkObjects.cs" />
     <Compile Include="Assets\Script\PropuestaOrdenarIrAUnLugar.cs" />
     <Compile Include="Assets\ScriptsAI\NPC\Bodi.cs" />
+    <Compile Include="Assets\Store_Unity\Characters\Mini Simple Characters Skeleton Demo\Readme\Scripts\Readme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
