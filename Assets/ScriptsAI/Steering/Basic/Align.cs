@@ -18,6 +18,8 @@ public class Align : SteeringBehaviour
     public override Steering GetSteering(Agent agent)
     {
         Steering steer = new Steering();
+        steer.linear = Vector3.zero;
+        steer.angular = 0;
         float rotation, steerRotation, steerAngularAcc;
 
         // Calculamos la orientacion del target
@@ -34,7 +36,7 @@ public class Align : SteeringBehaviour
         // Comprobamos si estamos mirando en la direccion correcta
         if(Mathf.Abs(rotation) < agent.InteriorAngle)
         {
-            return null;
+            return steer;
         }
 
         // Comprobamos si estamos fuera del angulo exterior

@@ -129,6 +129,16 @@ public class Bodi : MonoBehaviour
         return RadiansToDegrees(rAngle);
     }
 
+    public Vector3 AngleToVector(float grados)
+    {
+        float x, z;
+        float rAngle = DegreesToRadians(grados);
+        x = Mathf.Sin(rAngle);
+        z = Mathf.Cos(rAngle);
+
+        return new Vector3(x, 0, z);
+    }
+
     //      Retorna el ángulo heading en (-180, 180) en grado o radianes. Lo que consideres
     public float Heading()
     {
@@ -141,7 +151,7 @@ public class Bodi : MonoBehaviour
         // Se devuelve en grados
     }
 
-    Vector3 checkValue(Vector3 value, float maxValue)
+    public Vector3 checkValue(Vector3 value, float maxValue)
     {
         if(value.magnitude > maxValue)
         {
@@ -151,7 +161,7 @@ public class Bodi : MonoBehaviour
         return value;
     }
 
-    float checkValue(float value, float maxValue)
+    public float checkValue(float value, float maxValue)
     {
         if (Mathf.Abs(value) > maxValue)
         {

@@ -90,6 +90,7 @@
     <Compile Include="Assets\Script\CameraScripts\MarkObjects.cs" />
     <Compile Include="Assets\Script\PropuestaOrdenarIrAUnLugar.cs" />
     <Compile Include="Assets\ScriptsAI\NPC\Bodi.cs" />
+    <Compile Include="Assets\ScriptsAI\Steering\Delegated\Wander.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

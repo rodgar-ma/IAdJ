@@ -5,6 +5,7 @@ using UnityEngine;
 public class Face : Align
 {
 
+    protected Vector3 targetPosition;
     // Declara las variables que necesites para este SteeringBehaviour
 
     void Start()
@@ -17,18 +18,26 @@ public class Face : Align
     {
         Vector3 direction;
         float orientation;
+        Steering steer = new Steering();
+
+        if(target != null)
+        {
+            targetPosition = target.Position;
+        }
 
         // Calculamos la distancia al objetivo
-        direction = target.Position - agent.Position;
+        direction = targetPosition - agent.Position;
 
         // Comprobamos si la distancia es cero
         if (direction.magnitude == 0)
         {
-            return null;
+            steer.angular = 0;
+            steer.linear = Vector3.zero;
+            return steer;
         }
         orientation = Mathf.Atan2(direction.x, direction.z);
 
-        base.targetOrientation = target.RadiansToDegrees(orientation);
+        base.targetOrientation = agent.RadiansToDegrees(orientation);
         base.useDefaultTarget = false;
 
         return base.GetSteering(agent);

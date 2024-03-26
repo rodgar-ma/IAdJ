@@ -382,6 +382,7 @@
 "Assets/ScriptsAI/Steering/Delegated/Pursue.cs"
 "Assets/ScriptsAI/Steering/Delegated/WallAvoidance_1Bigote.cs"
 "Assets/ScriptsAI/Steering/Delegated/WallAvoidance_3Bigotes.cs"
+"Assets/ScriptsAI/Steering/Delegated/Wander.cs"
 "Assets/ScriptsAI/Steering/Generic/Steering.cs"
 "Assets/ScriptsAI/Steering/Generic/SteeringBehaviour.cs"
 "Assets/ScriptsAI/Steering/Group/Separation.cs"
