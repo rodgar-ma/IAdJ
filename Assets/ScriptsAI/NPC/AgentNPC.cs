@@ -70,7 +70,7 @@ public class AgentNPC : Agent
         AngularAcc = this.steer.angular;
         
         // Si la aceleracion angular es demasiado pequeña paramos de rotar al NPC
-        if (AngularAcc <= 0.1f)
+        if (AngularAcc <= 0.001f && AngularAcc >= -0.001f)
         {
             Rotation = 0f;
         }

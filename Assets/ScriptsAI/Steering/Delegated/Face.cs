@@ -28,8 +28,8 @@ public class Face : Align
         }
         orientation = Mathf.Atan2(direction.x, direction.z);
 
-        base.target = target;
-        base.target.Orientation = target.RadiansToDegrees(orientation);
+        base.targetOrientation = target.RadiansToDegrees(orientation);
+        base.useDefaultTarget = false;
 
         return base.GetSteering(agent);
     }
