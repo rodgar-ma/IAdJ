@@ -1666,9 +1666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   timeToTarget: 0.1
-  wanderOffset: 1
+  wanderOffset: 10
   wanderRadius: 5
-  wanderRate: 90
+  wanderRate: 200
 --- !u!114 &1810226414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1682,10 +1682,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mass: 1
-  _maxSpeed: 2
-  _maxRotation: 180
+  _maxSpeed: 1
+  _maxRotation: 360
   _maxAcceleration: 16
-  _maxAngularAcc: 180
+  _maxAngularAcc: 360
   _maxForce: 1
   _interiorRadius: 1
   _arrivalRadius: 3
